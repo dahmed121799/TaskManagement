@@ -1,0 +1,153 @@
+
+/* style.css */
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left-pane,
+.right-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+}
+
+.left-pane {
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  position: relative;
+  text-align: center;
+}
+
+.page-header {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: underline;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #6200ea;
+  background-color: transparent;
+  color: #6200ea;
+  font-size: 16px;
+}
+
+.form-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.forgot {
+  text-decoration: none;
+  color: #777;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 200px;
+  padding: 12px 0;
+  border: none;
+  background-color: #e4e4e4;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 4px;
+  transition: transform 0.1s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.signup {
+  background-color: #e4e4e4;
+}
+
+.or-text {
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+
+.google {
+  color: #6200ea;
+  font-weight: bold;
+}
+
+.right-pane {
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #d6d6d6;
+  gap: 15px;
+  padding-top: 80px;
+}
+
+.right-pane a {
+  color: #222;
+  text-decoration: underline;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+}
