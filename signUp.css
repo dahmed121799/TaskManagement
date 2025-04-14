@@ -1,0 +1,141 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden
+}
+  
+.container {
+    display: flex;
+    height: 100%;
+}
+
+input::placeholder {
+    font: 1rem
+} 
+  
+.form-container {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 5%;
+    height: 100%;
+
+}
+
+h1{
+    color: #d3d3d3;
+}
+
+h2 {
+color: #800080;
+margin-bottom: 20px;
+}
+/* p{
+text-align: center;
+} */
+
+form {
+display: flex;
+flex-direction: column;
+width: 60%;
+/* border-radius: 20px; */
+}
+
+form input, form button {
+margin-bottom: 10px;
+padding: 10px;
+font-size: 16px;
+border-radius: 10px;
+}
+
+
+.my-submit{
+background-color:#d3d3d3;
+}
+.my-submit:hover {
+    background-color: #800080;
+}
+
+.or-container {
+    margin-left: 25%;
+    padding: 10px; 
+}
+
+button {
+background-color: blue;
+color: white;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}
+
+button:hover {
+background-color: darkblue;
+}
+
+.google-signin {
+    border: none;
+    padding: 10px 20px;
+    /* margin: 10px; */
+    border-radius: 5px;
+    cursor: pointer;
+}
+.apple-signin {
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+
+.quote-container {
+flex: 1;
+background-color: #d3d3d3;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #333;
+padding: 20px;
+box-sizing: border-box;
+}
+
+.quote-container p {
+font-size: 24px;
+font-style: italic;
+text-align: center;
+}
+
+
+    
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Stack the form and quote side vertically */
+        align-items: center; /* Center content */
+    }
+
+    .form-container {
+        width: 90%; 
+        margin-left: 0; 
+    }
+
+    .alternative-signup {
+        max-width: 100%; 
+        margin-top: 20px; 
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .quote-container {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .quote-container p {
+        font-size: 18px; 
+    }
+}
