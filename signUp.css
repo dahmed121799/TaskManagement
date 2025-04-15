@@ -1,13 +1,12 @@
 html, body {
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
-    overflow: hidden
+    font-family: 'Roboto', sans-serif;
 }
   
 .container {
     display: flex;
-    height: 100%;
+    height: 100vh;
 }
 
 input::placeholder {
@@ -16,10 +15,10 @@ input::placeholder {
   
 .form-container {
     flex: 1;
-    padding: 20px;
     box-sizing: border-box;
     margin-left: 5%;
     height: 100%;
+    padding-right: 10%;
 
 }
 
@@ -28,33 +27,36 @@ h1{
 }
 
 h2 {
-color: #800080;
+color: #6200ea;
 margin-bottom: 20px;
 }
-/* p{
-text-align: center;
-} */
 
 form {
 display: flex;
 flex-direction: column;
-width: 60%;
-/* border-radius: 20px; */
+width: 100%;
 }
 
 form input, form button {
 margin-bottom: 10px;
 padding: 10px;
 font-size: 16px;
-border-radius: 10px;
 }
 
+input[type="text"], input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  color: #6200ea;
+  font-size: 16px;
+}
 
 .my-submit{
 background-color:#d3d3d3;
 }
+
 .my-submit:hover {
-    background-color: #800080;
+    background-color: #6200ea;
 }
 
 .or-container {
@@ -63,7 +65,7 @@ background-color:#d3d3d3;
 }
 
 button {
-background-color: blue;
+background-color: #d3d3d3;
 color: white;
 border: none;
 cursor: pointer;
@@ -71,16 +73,16 @@ border-radius: 5px;
 }
 
 button:hover {
-background-color: darkblue;
+background-color: #6200ea;
 }
 
 .google-signin {
     border: none;
     padding: 10px 20px;
-    /* margin: 10px; */
     border-radius: 5px;
     cursor: pointer;
 }
+
 .apple-signin {
     border: none;
     padding: 10px 20px;
@@ -89,6 +91,24 @@ background-color: darkblue;
     cursor: pointer;
 }
   
+.google-signin:hover,
+.apple-signin:hover {
+    background-color: #6200ea;
+}
+
+.alternative-signup p {
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.alternative-signup a {
+    color: #6200ea;
+    text-decoration: none;
+}
+
+.alternative-signup a:hover {
+    text-decoration: underline;
+} 
 
 .quote-container {
 flex: 1;
@@ -108,34 +128,30 @@ text-align: center;
 }
 
 
-    
-@media screen and (max-width: 600px) {
+
+/* Responsive */
+@media screen and (max-width: 768px) {
     .container {
-        flex-direction: column; /* Stack the form and quote side vertically */
-        align-items: center; /* Center content */
+        flex-direction: column;
     }
 
     .form-container {
-        width: 90%; 
-        margin-left: 0; 
+        width: 100%;
+        padding: 20px;
+        border: 10px;
+    }
+
+    form {
+        width: 100%;
+        max-width: 300px;
     }
 
     .alternative-signup {
-        max-width: 100%; 
-        margin-top: 20px; 
-    }
-
-    button {
         width: 100%;
+        max-width: 300px;
     }
 
-    .quote-container {
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .quote-container p {
-        font-size: 18px; 
+    .quote-container{
+        box-sizing: none;
     }
 }
