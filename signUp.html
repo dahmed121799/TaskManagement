@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Dubem Akukwe" />
+    <meta name="description" content="Sign up web page" />
+    <meta name="keywords" content="web programming, HTML, CSS, JavaScript" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="signUp.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Pioneering Task Management</h1>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter your name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter your password" required>
+
+                <label for="terms">
+                    <input type="checkbox" id="terms"> I agree to the terms & policy
+                </label>
+
+                <button type="submit" class="my-submit">Sign Up</button>
+            </form>
+
+            <div class="alternative-signup">
+                <div class="or-container">
+                    <span>Or</span>
+                </div>
+
+                <button class="google-signin">Sign in with Google</button>
+                <button class="apple-signin">Sign in with Apple</button>
+                <p>Have an account? <a href="index.html">Sign In</a></p>
+            </div>
+        </div>
+
+        <div class="quote-container">
+            <blockquote>
+                "Your future starts today. Join us and be part of something great!"
+            </blockquote>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("signup-form").addEventListener("submit", function(event){
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const terms = document.getElementById("terms").checked;
+
+            if (name === "" || email === "" || password === "" || !terms) {
+                alert("Please fill all the fields and agree to the terms and policy.");
+                return;
+            }
+
+            const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+            if (!passwordRegex.test(password)) {
+                alert("Password must be at least 8 characters long, include an uppercase letter, and contain at least one number.");
+                return; //
+            }
+
+            alert("Thank you for signing up, " + name + "! You have successfully registered.");
+            window.location.href = "index.html";
+        });
+    </script>
+
+</body>
+</html>
