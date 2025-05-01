@@ -1,0 +1,133 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  background: white;
+  border-radius: 8px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+input[type="password"] {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='4' y='16' font-size='11' fill='%23999'%3E**********%3C/text%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: auto 100%;
+}
+
+input:focus {
+  outline: none;
+  border-color: #6200ea;
+  background-color: #fff;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #7b42f6;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #6200ea;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+a.forgot-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #0077ff;
+  text-decoration: underline;
+}
+
+.footer-links {
+  font-size: 13px;
+  margin-top: 20px;
+  color: #777;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #6200ea;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+a.forgot-link {
+  display: block;
+  margin: 10px 0;
+  text-align: left;
+  font-size: 13px;
+  color: #6200ea !important;
+  text-decoration: underline;
+}

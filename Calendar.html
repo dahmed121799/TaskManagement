@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Payton Todd"/>
+  <meta name="description" content="Current Tasks with dates on a Calendar" />
+  <title>Calendar</title>
+  
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        display: flex;
+    }
+
+    .sidebar {
+		background-color: lightgrey;
+		width: 170px;
+		padding: 10px;
+		height: 100vh;
+		box-sizing: border-box;
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 20px;
+		position: relative;
+    }
+
+    .sidebar p {
+		color: #6200ea;
+		margin: 10px 0;
+    }
+	.sidebar a {
+		color: #6200ea;
+		text-decoration: none; 
+	}
+
+    .main-content {
+        flex-grow: 1;
+        padding: 20px;
+    }
+
+    .calendar-header {
+        border: 2px solid #555;
+        padding: 10px;
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 10px;
+        background-color: lightgrey;
+		color: #6200ea;
+    }
+
+    .controls {
+        margin-bottom: 10px;
+    }
+
+    select {
+        padding: 5px;
+    }
+
+    .calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1px;
+        background-color: #black;
+        border: 2px solid #555;
+    }
+
+    .calendar div {
+        background-color: white;
+        min-height: 80px;
+        padding: 5px;
+        position: relative;
+        border: 1px solid #ccc;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 2px 2px;
+    }
+
+    .dot.green { background-color: green; }
+    .dot.red { background-color: red; }
+	
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const header = document.querySelector(".calendar-header");
+      const date = new Date();
+      const options = { month: 'long', year: 'numeric' };
+      header.textContent = `${date.toLocaleDateString(undefined, options)}`;
+    });
+	function addNote() 
+	{
+		const input = document.getElementById("note-input");
+		const noteText = input.value.trim();
+
+		if (noteText !== "") 
+		{
+		  const li = document.createElement("li");
+		  li.textContent = noteText;
+		  document.getElementById("notes-list").appendChild(li);
+		  input.value = "";
+		}
+	}
+
+	function removeNote() 
+	{
+		const list = document.getElementById("notes-list");
+		
+		if (list.lastChild) 
+		{
+		  list.removeChild(list.lastChild);
+		}
+	}
+  </script>
+</head>
+<body>
+  <div class="sidebar">
+    <p>
+		<a href="dashboard.html"><strong>Dashboard</strong><br></a>
+		<a href="To-Do.html"><br><strong>To do list</strong><br></a>
+		<a href="index.html"><br><strong>Login</strong><br></a>
+	</p>
+	
+	<p><div>
+		<strong>Notes:</strong>
+		<ul id="notes-list" style="padding-left: 15px;"></ul>
+		<input type="text" id="note-input" placeholder="Enter note" style="width: 90%; margin-top: 5px;">
+		<button onclick="addNote()" style="margin-top: 5px;color: #6200ea">Add</button>
+		<button onclick="removeNote()" style="margin-top: 5px; color: #6200ea">Remove Last</button>
+	</div></p>
+	
+	<p style="bottom: 150px; position: absolute">404 Not Found</p>
+	<img src="logo.png" alt="Logo" style="position: absolute; bottom: 5px; width: 150px; height: 150px;border-radius: 50px">
+  </div>
+
+  <div class="main-content">
+    <div class="calendar-header">Month and Year</div>
+    <div class="controls">
+    </div>
+    <div class="calendar">
+      <div id="day 1">1<span class="dot green"></span><span class="dot green"></span></div>
+      <div id="day 2">2<span class="dot green"></span></div>
+      <div id="Day 3">3<span class="dot red"></span></div>
+      <div id="Day 4">4<span class="dot green"></span><span class="dot red"></span></div>
+      <div id="Day 5">5<span class="dot red"></span></div>
+      <div id="Day 6">6</div>
+      <div id="Day 7">7</div>
+      <div id="Day 8">8</div>
+      <div id="Day 9">9</div>
+      <div id="Day 10">10</div>
+      <div id="Day 11">11</div>
+      <div id="Day 12">12</div>
+      <div id="Day 13">13</div>
+      <div id="Day 14">14</div>
+      <div id="Day 15">15</div>
+      <div id="Day 16">16</div>
+      <div id="Day 17">17</div>
+      <div id="Day 18">18</div>
+      <div id="Day 19">19</div>
+      <div id="Day 20">20</div>
+      <div id="Day 21">21</div>
+      <div id="Day 22">22</div>
+      <div id="Day 23">23</div>
+      <div id="Day 24">24</div>
+      <div id="Day 25">25</div>
+      <div id="Day 26">26</div>
+      <div id="Day 27">27</div>
+      <div id="Day 28">28</div>
+      <div id="Day 29">29</div>
+      <div id="Day 30">30</div>
+      <div id="Day 31">31</div>
+	  <div></div>
+	  <div></div>
+	  <div></div>
+	  <div></div>
+    </div>
+  </div>
+</body>
+</html>

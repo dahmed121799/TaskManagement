@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="dashboard.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Management Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-top">
+          <nav>
+            <ul class="main-nav">
+              <li><span>🏠</span> Home</li>
+              <li><span>📊</span> Visualize Data</li>
+              <li><span>📅</span> Calendar</li>
+              <li><span>📝</span> <a href="todo.html">To-Do List</a></li>
+            </ul>
+            <div class="projects">
+              <p>PROJECTS</p>
+              <ul>
+                <li>CSCI 426 Dashboard</li>
+                <li>House Remodel Dashboard</li>
+                <li>CSCI 413 Dashboard</li>
+                <li>Final Project Dashboard</li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        
+       <div class="sidebar-bottom">
+        <button id="darkModeToggle" class="dark-mode-toggle">
+            🌙 Dark Mode
+          </button>
+
+        <button class=""logout-button" onclick="handleLogout()">🚪 Logout</button>
+       <!--<div class="settings">
+          <span>⚙️</span> Settings
+     </div>--> 
+       </div> 
+      </div>
+      
+  <main>
+
+    <div class="hamburger" aria-label="Toggle menu">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="black" stroke-width="2"/>
+        </svg>
+      </div>
+    <header>
+      <h1>Project Dashboard</h1>
+    </header>
+
+    <section class="board">
+      <div class="column" aria-label="To Do">
+        <h2>To Do</h2>
+        <div class="task-list" id="todo"></div>
+        <button onclick="openForm('todo')">+ Add Task</button>
+      </div>
+
+      <div class="column" aria-label="In Progress">
+        <h2>In Progress</h2>
+        <div class="task-list" id="inprogress"></div>
+        <button onclick="openForm('inprogress')">+ Add Task</button>
+      </div>
+
+      <div class="column" aria-label="Testing">
+        <h2>Testing</h2>
+        <div class="task-list" id="testing"></div>
+        <button onclick="openForm('testing')">+ Add Task</button>
+      </div>
+
+      <div class="column" aria-label="Completed">
+        <h2>Completed</h2>
+        <div class="task-list" id="completed"></div>
+        <button onclick="openForm('completed')">+ Add Task</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="taskFormModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm()">&times;</span>
+      <h3>Add New Task</h3>
+      <form id="taskForm" onsubmit="addTask(event)">
+        <label for="taskName">Task Name</label>
+        <input type="text" id="taskName" required />
+
+        <label for="priority">Priority</label>
+        <select id="priority" required>
+          <option value="P0">P0</option>
+          <option value="P1">P1</option>
+          <option value="P2">P2</option>
+        </select>
+
+        <input type="hidden" id="targetColumn" />
+        <button type="submit">Add Task</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
