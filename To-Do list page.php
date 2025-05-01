@@ -114,7 +114,7 @@
 		<!-- Creates the buttons that are used to get to each webpage -->
 		<!-- Also style it using inline to have these align with the middle title -->
 		<div style ="margin-top: 10px;">
-		<button onclick="''">Home</button>
+		<button onclick="location.href='dashboard.php'">Dashboard</button>
 		<button onclick="''">Log In</button>
 		<button onclick="location.href='Calendar.php'">Calendar</button>
 		<button onclick="''">Tasks</button>
@@ -186,19 +186,8 @@
 	var TaskDateDue = document.getElementById("due").value;
 	var TaskPriority = document.getElementById("priority").value;
 
-
-	const formData = new FormData(this);
-  formData.append("save", "1");
-
-  fetch("", {
-    method: "POST",
-    body: formData
   })
-  .then(res => res.text())
-  .then(data => console.log("Saved to DB"))
-  .catch(err => console.error("Error saving:", err));
-});
-	});
+ 
 </script>
 
 <!-- This script adds the option to delet the list on the right side -->
@@ -210,25 +199,30 @@ document.getElementById("ListsAdder").innerHTML="";
 </script>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['calender'])) {
-
+ 
+	//Creates the connection between my page and the backend of our webpages.
     $conn = new mysqli("localhost", "root", "", "taskmanagment_db");
 
-
+	//Gets the title information
     $title = $_POST['title'];
+	//Gets the description information
     $description = $_POST['description'];
+	//Gets the date added information
     $date_added = $_POST['date_added'];
+	//Gets the due date information
     $due_date = $_POST['due_date'];
+	//Gets the priority information
     $priority = $_POST['priority'];
+	//Gets the status information
     $status = $_POST['status'];
 
  
+	//Addes the information that has been gathered into our database into the to-do list table
     $sql = "INSERT INTO `to-do list` (TaskTitle, TaskDescription, AddDate, DueDate, TaskPriority, Status)
             VALUES ('$title', '$description', '$date_added', '$due_date', '$priority', '$status')";
-			
-			$conn->query($sql); // No alert needed
+	//Closes the connection the the database
+			$conn->query($sql);
 			$conn->close();
-
-  
 }
 ?>
 
